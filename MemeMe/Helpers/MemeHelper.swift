@@ -13,7 +13,8 @@ struct MemeHelper {
     static func save(topText: String, bottomText: String, originalImage: UIImage, memeImage: UIImage) {
         
         if topText.characters.count > 0 && bottomText.characters.count > 0 {
-            _ = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memeImage: memeImage)
+            let meme = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memeImage: memeImage)
+            Memes.shared.memesArray.append(meme)
         }
     }
     
