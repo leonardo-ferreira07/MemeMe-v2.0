@@ -32,7 +32,6 @@ class PickImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        hideNavigationBar(true)
         configDefaulTextAttributes()
         if let meme = meme {
             topTextField.text = meme.topText
@@ -45,6 +44,7 @@ class PickImageViewController: UIViewController {
         super.viewWillAppear(true)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         resetShareButton()
+        hideNavigationBar(true)
         
         resignTextFields()
         subscribeToKeyboardNotifications()
