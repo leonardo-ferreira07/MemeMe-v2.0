@@ -84,7 +84,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-Sh-uEX">
-                                                    <rect key="frame" x="120" y="0.0" width="235" height="99.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="99.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBB-II-nlO">
                                                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="47.333333333333336"/>
@@ -139,10 +139,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="V42-MX-xcW" kind="show" identifier="showMemeDetail" id="2O0-my-dVg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJa-wf-mO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-561" y="-367"/>
+            <point key="canvasLocation" x="-478" y="-367"/>
         </scene>
         <!--Pick Image View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -258,6 +261,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="298" y="-103"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iZg-29-yHW">
+            <objects>
+                <viewController id="V42-MX-xcW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BrX-ef-PHf"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Kh-sa-sAE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zOw-zt-62n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJq-wq-ucf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679" y="-792"/>
         </scene>
         <!--Choose Font View Controller-->
         <scene sceneID="gBy-Ge-ioc">
@@ -458,6 +479,7 @@
                     <connections>
                         <outlet property="sentMemesCollectionFlowLayout" destination="Fpi-Pf-ZbM" id="UZH-SP-Ytr"/>
                         <outlet property="sentMemesCollectionView" destination="9Mf-XH-57N" id="hyF-br-FDs"/>
+                        <segue destination="V42-MX-xcW" kind="show" identifier="showMemeDetail" id="GFS-1v-m2t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMq-GE-e6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -466,6 +488,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="GFS-1v-m2t"/>
         <segue reference="e9r-wA-EzN"/>
     </inferredMetricsTieBreakers>
 </document>

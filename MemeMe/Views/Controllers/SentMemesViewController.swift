@@ -28,6 +28,16 @@ class SentMemesViewController: UIViewController {
         configureCollectionViewFlowLayout()
         sentMemesCollectionView.reloadData()
     }
+    
+    // MARK: - Prepare for segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? MemeDetailViewController {
+            if let meme = sender as? Meme {
+                controller.meme = meme
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,7 +73,7 @@ extension SentMemesViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "showMemeDetail", sender: Memes.shared.memesArray[indexPath.item])
     }
     
 }

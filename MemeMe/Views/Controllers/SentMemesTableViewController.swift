@@ -28,6 +28,16 @@ class SentMemesTableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Prepare for segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? MemeDetailViewController {
+            if let meme = sender as? Meme {
+                controller.meme = meme
+            }
+        }
+    }
+    
 }
 
 // MARK: - TableView Delegate and Data Source
@@ -57,7 +67,7 @@ extension SentMemesTableViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        performSegue(withIdentifier: "showMemeDetail", sender: Memes.shared.memesArray[indexPath.row])
     }
     
 }

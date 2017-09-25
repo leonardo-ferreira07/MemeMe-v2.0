@@ -92,6 +92,7 @@ class PickImageViewController: UIViewController {
     
     @IBAction func cancelButtonClicked(_ sender: UIBarButtonItem) {
         clearEditor()
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func chooseSourceType(sourceType: UIImagePickerControllerSourceType) {

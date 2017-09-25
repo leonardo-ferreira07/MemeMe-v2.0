@@ -25,6 +25,7 @@
 		A7EC85471F792BDE00525EAE /* SentMemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC85461F792BDE00525EAE /* SentMemeCollectionViewCell.swift */; };
 		A7EC854B1F793E7900525EAE /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC854A1F793E7900525EAE /* SentMemesTableViewController.swift */; };
 		A7EC854D1F793F4800525EAE /* SentMemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC854C1F793F4800525EAE /* SentMemeTableViewCell.swift */; };
+		A7EC854F1F7946E000525EAE /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EC854E1F7946E000525EAE /* MemeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A7EC85461F792BDE00525EAE /* SentMemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7EC854A1F793E7900525EAE /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		A7EC854C1F793F4800525EAE /* SentMemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemeTableViewCell.swift; sourceTree = "<group>"; };
+		A7EC854E1F7946E000525EAE /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				A707D26C1F73FF67006AA79A /* ChooseFontViewController.swift */,
 				A7EC85441F792A3B00525EAE /* SentMemesViewController.swift */,
 				A7EC854A1F793E7900525EAE /* SentMemesTableViewController.swift */,
+				A7EC854E1F7946E000525EAE /* MemeDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				A70A8D4E1F72BF40007D3AD5 /* MemeHelper.swift in Sources */,
 				A7EC854D1F793F4800525EAE /* SentMemeTableViewCell.swift in Sources */,
 				A707D26D1F73FF67006AA79A /* ChooseFontViewController.swift in Sources */,
+				A7EC854F1F7946E000525EAE /* MemeDetailViewController.swift in Sources */,
 				A7EC85451F792A3B00525EAE /* SentMemesViewController.swift in Sources */,
 				A712CAD91F77F9810025BFB8 /* Memes.swift in Sources */,
 				A70558611F7538860001459B /* Meme+UIView.swift in Sources */,
