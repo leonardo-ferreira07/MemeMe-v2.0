@@ -70,4 +70,23 @@ extension SentMemesTableViewController: UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "showMemeDetail", sender: Memes.shared.memesArray[indexPath.row])
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            Memes.shared.memesArray.remove(at: indexPath.row)
+            if #available(iOS 11.0, *) {
+                tableView.performBatchUpdates({
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                }, completion: nil)
+            } else {
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+            }
+        }
+    }
+    
 }
