@@ -26,12 +26,18 @@ class PickImageViewController: UIViewController {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var hadAnimation: Bool = false
+    var meme: Meme?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configDefaulTextAttributes()
+        if let meme = meme {
+            topTextField.text = meme.topText
+            bottomTextField.text = meme.bottomText
+            memeImageView.image = meme.originalImage
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +70,7 @@ class PickImageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? ChooseFontViewController {
             viewController.callbackFont = { (font) in
-                self.configDefaulTextAttributes(withFont: font)
+                self.configDefaulTextAttributes(withFont: font, setsDefaultText: false)
             }
         }
     }
@@ -214,13 +220,15 @@ extension PickImageViewController {
         bottomTextField.resignFirstResponder()
     }
     
-    func configDefaulTextAttributes(withFont font: String? = nil) {
+    func configDefaulTextAttributes(withFont font: String? = nil, setsDefaultText: Bool = true) {
         topTextField.defaultTextAttributes = textFieldTextAttributes(withFont: font)
         topTextField.textAlignment = .center
-        topTextField.text = TextsForFields.top.rawValue
+        if setsDefaultText {
+            topTextField.text = TextsForFields.top.rawValue
+            bottomTextField.text = TextsForFields.bottom.rawValue
+        }
         bottomTextField.defaultTextAttributes = textFieldTextAttributes(withFont: font)
         bottomTextField.textAlignment = .center
-        bottomTextField.text = TextsForFields.bottom.rawValue
     }
 }
 
