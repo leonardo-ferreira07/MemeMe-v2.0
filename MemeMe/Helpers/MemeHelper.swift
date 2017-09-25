@@ -10,9 +10,20 @@ import UIKit
 
 struct MemeHelper {
     
-    static func save(topText: String, bottomText: String, originalImage: UIImage, memeImage: UIImage) {
+    static func save(topText: String, bottomText: String, originalImage: UIImage, memeImage: UIImage, editMemeInstance: Meme? = nil) {
         
         if topText.characters.count > 0 && bottomText.characters.count > 0 {
+            
+            if let meme = editMemeInstance {
+                let containsSameMeme = Memes.shared.memesArray.contains { $0.memeImage == meme.memeImage }
+                if containsSameMeme {
+                    let index = Memes.shared.memesArray.index { $0.memeImage == meme.memeImage }
+                    let meme1 = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memeImage: memeImage)
+                    Memes.shared.memesArray[index!] = meme1
+                    return
+                }
+            }
+            
             let meme = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memeImage: memeImage)
             Memes.shared.memesArray.append(meme)
         }

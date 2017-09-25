@@ -14,6 +14,8 @@ class SentMemesTableViewController: UIViewController {
         case tableMeme
     }
     
+    @IBOutlet weak var sentMemesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,12 @@ class SentMemesTableViewController: UIViewController {
         
         Memes.shared.memesArray.append(contentsOf: [meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme])
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        sentMemesTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

@@ -88,12 +88,13 @@ class PickImageViewController: UIViewController {
     }
     
     @IBAction func shareClicked(_ sender: UIBarButtonItem) {
+        resignTextFields()
         let memeImage = MemeHelper.generateMemedImage(self)
         self.presentActivityController(withImage: memeImage, completion: {
             MemeHelper.save(topText: self.topTextField.text ?? "",
                             bottomText: self.bottomTextField.text ?? "",
                             originalImage: self.memeImageView.image!,
-                            memeImage: memeImage)
+                            memeImage: memeImage, editMemeInstance: self.meme)
             self.clearEditor()
         })
     }
