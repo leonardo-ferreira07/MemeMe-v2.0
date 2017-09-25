@@ -9,6 +9,10 @@
 import UIKit
 
 class SentMemesViewController: UIViewController {
+    
+    enum MemesCollectionCell: String {
+        case collectionMeme
+    }
 
     @IBOutlet weak var sentMemesCollectionView: UICollectionView!
     @IBOutlet weak var sentMemesCollectionFlowLayout: UICollectionViewFlowLayout!
@@ -45,7 +49,7 @@ extension SentMemesViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCollectionViewCell", for: indexPath) as? SentMemeCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MemesCollectionCell.collectionMeme.rawValue, for: indexPath) as? SentMemeCollectionViewCell {
             return cell
         }
         
@@ -54,7 +58,7 @@ extension SentMemesViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let cell = cell as? SentMemeCollectionViewCell {
-            cell.memeImageView.image = Memes.shared.memesArray[indexPath.item].memeImage
+            cell.confugureCell(with: Memes.shared.memesArray[indexPath.item])
         }
     }
     

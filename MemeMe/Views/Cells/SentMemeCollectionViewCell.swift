@@ -13,3 +13,11 @@ class SentMemeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var memeImageView: UIImageView!
     
 }
+
+// MARK: - Configure cell
+
+extension SentMemeCollectionViewCell {
+    func confugureCell(with meme: Meme) {
+        memeImageView.image = meme.memeImage
+    }
+}
