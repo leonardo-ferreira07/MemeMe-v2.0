@@ -16,12 +16,12 @@ class SentMemesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureCollectionViewFlowLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        configureCollectionViewFlowLayout()
         sentMemesCollectionView.reloadData()
     }
 
@@ -68,8 +68,9 @@ extension SentMemesViewController: UICollectionViewDataSource, UICollectionViewD
 
 extension SentMemesViewController {
     func configureCollectionViewFlowLayout() {
-        let space:CGFloat = 3.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.height - (2 * space)) / 3.0
         
         sentMemesCollectionFlowLayout.minimumInteritemSpacing = space
         sentMemesCollectionFlowLayout.minimumLineSpacing = space
