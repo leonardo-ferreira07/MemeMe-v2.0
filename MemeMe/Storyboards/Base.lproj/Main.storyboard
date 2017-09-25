@@ -84,7 +84,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-Sh-uEX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="99.666666666666671"/>
+                                                    <rect key="frame" x="120" y="0.0" width="235" height="99.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBB-II-nlO">
                                                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="47.333333333333336"/>
@@ -260,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="-103"/>
+            <point key="canvasLocation" x="296.80000000000001" y="-103.44827586206897"/>
         </scene>
         <!--Meme Detail View Controller-->
         <scene sceneID="iZg-29-yHW">

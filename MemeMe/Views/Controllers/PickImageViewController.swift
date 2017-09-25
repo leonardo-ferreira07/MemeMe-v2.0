@@ -32,6 +32,7 @@ class PickImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        hideNavigationBar(true)
         configDefaulTextAttributes()
         if let meme = meme {
             topTextField.text = meme.topText
@@ -61,6 +62,7 @@ class PickImageViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        hideNavigationBar(false)
         resignTextFields()
         unsubscribeFromKeyboardNotifications()
     }
@@ -98,6 +100,7 @@ class PickImageViewController: UIViewController {
     
     @IBAction func cancelButtonClicked(_ sender: UIBarButtonItem) {
         clearEditor()
+        hideNavigationBar(false)
         navigationController?.popToRootViewController(animated: true)
     }
     
@@ -213,6 +216,10 @@ extension PickImageViewController {
     
     func resetShareButton() {
         shareButton.isEnabled = memeImageView.image == nil ? false : true
+    }
+    
+    func hideNavigationBar(_ isHidden: Bool) {
+        navigationController?.navigationBar.isHidden = isHidden
     }
     
     func resignTextFields() {
