@@ -18,8 +18,8 @@ struct MemeHelper {
                 let containsSameMeme = Memes.shared.memesArray.contains { $0.memeImage == meme.memeImage }
                 if containsSameMeme {
                     let index = Memes.shared.memesArray.index { $0.memeImage == meme.memeImage }
-                    let meme1 = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memeImage: memeImage)
-                    Memes.shared.memesArray[index!] = meme1
+                    let memeEqual = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memeImage: memeImage)
+                    Memes.shared.memesArray[index!] = memeEqual
                     return
                 }
             }
