@@ -25,7 +25,6 @@ class SentMemesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        configureCollectionViewFlowLayout()
         sentMemesCollectionView.reloadData()
     }
     
@@ -36,6 +35,16 @@ class SentMemesViewController: UIViewController {
             if let meme = sender as? Meme {
                 controller.meme = meme
             }
+        }
+    }
+    
+    // MARK: - View transition
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if sentMemesCollectionView != nil {
+            sentMemesCollectionView.reloadData()
         }
     }
 
@@ -80,14 +89,21 @@ extension SentMemesViewController: UICollectionViewDataSource, UICollectionViewD
 
 // MARK: - Flow layout
 
-extension SentMemesViewController {
-    func configureCollectionViewFlowLayout() {
-        
-        let space: CGFloat = 3.0
-        let dimension = (view.frame.size.height - (2 * space)) / 3.0
-        
-        sentMemesCollectionFlowLayout.minimumInteritemSpacing = space
-        sentMemesCollectionFlowLayout.minimumLineSpacing = space
-        sentMemesCollectionFlowLayout.itemSize = CGSize(width: dimension, height: dimension)
+extension SentMemesViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 3.0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 3.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        return CGSize(width: dimension, height: dimension)
+    }
+    
 }
