@@ -18,10 +18,6 @@ class SentMemesTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let meme = Meme.init(topText: "a", bottomText: "b", originalImage: UIImage(named: "LaunchImage")!, memeImage: UIImage(named: "LaunchImage")!)
-        
-        Memes.shared.memesArray.append(contentsOf: [meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme, meme])
         
     }
     
