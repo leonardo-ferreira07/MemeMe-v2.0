@@ -162,9 +162,11 @@ extension PickImageViewController {
         if (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) && topBarConstraint.constant == 0  {
             self.topBarConstraint.constant -= self.topBar.frame.height
         }
-        self.bottomLayoutConstraint.constant += self.getKeyboardHeight(notification)
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
+        if self.bottomLayoutConstraint.constant == 0 {
+            self.bottomLayoutConstraint.constant += self.getKeyboardHeight(notification)
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
@@ -172,9 +174,11 @@ extension PickImageViewController {
         if self.topBarConstraint.constant == -self.topBar.frame.height {
             self.topBarConstraint.constant = 0
         }
-        self.bottomLayoutConstraint.constant -= self.getKeyboardHeight(notification)
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
+        if self.bottomLayoutConstraint.constant == getKeyboardHeight(notification) {
+            self.bottomLayoutConstraint.constant -= self.getKeyboardHeight(notification)
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
