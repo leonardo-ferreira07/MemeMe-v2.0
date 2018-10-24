@@ -78,8 +78,8 @@ extension SentMemesTableViewController: UITableViewDelegate, UITableViewDataSour
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
             Memes.shared.memesArray.remove(at: indexPath.row)
             if #available(iOS 11.0, *) {
                 tableView.performBatchUpdates({
